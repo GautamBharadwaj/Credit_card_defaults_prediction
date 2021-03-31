@@ -1,36 +1,3 @@
-'''import pymongo
-import pandas as pd
-
-#DB_URL = 'mongodb+srv://{0}:{1}@cluster0.5fvxl.mongodb.net/<dbname>?retryWrites=true&w=majority'.format("new_wafer_user", "new_password")
-URL = "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false"
-
-
-def getDataFrameofCollection():
-
-    try:
-        client = pymongo.MongoClient(URL)
-        database = client['wafer_sys']
-        collection = database['schema_training']
-        df = pd.DataFrame(list(collection.find()))
-        if "_id" in df.columns.to_list():
-            df = df.drop(columns=["_id"], axis=1)
-        return df
-    except Exception as e:
-        raise Exception("Error in Class: MongoDBOperation method:getDataFrameofCollection error:   " + str(e))
-
-
-df = getDataFrameofCollection()
-print(df)
-if "_id" in df.columns.to_list():
-    df = df.drop(columns=["_id"], axis=1)
-
-dic={}
-[dic.update({i: df.loc[0, i]}) for i in df.columns]
-#pattern = dic['SampleFileName']
-LengthOfDateStampInFile = dic['LengthOfDateStampInFile']
-'''
-
-
 
 import pymongo
 import json
